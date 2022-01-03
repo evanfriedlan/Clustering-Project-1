@@ -74,8 +74,8 @@ par(mfrow=c(3,5))
 for (colname in colnames(marketing)){
   print(colname)
   colaverages = c(mean(clust1[,colname]),mean(clust2[,colname]))
-  xx = barplot(colaverages,names.arg=c("1","2"), col=c("blue","cyan"),main = colname)
-  text(x = xx, y = round(colaverages), label = round(colaverages), pos = 3, cex = 0.8, col = "black")
+  xx = barplot(colaverages,names.arg=c("1","2"), col=c("light blue","red"),main = colname)
+  text(x = xx, y = round(colaverages), label = round(colaverages), pos = 1, cex = 0.8, col = "black")
 }
 
 for (colname in colnames(marketing)){
@@ -85,12 +85,12 @@ for (colname in colnames(marketing)){
   text(x = xx, y = round(colsums), label = round(colsums), pos = 3, cex = 0.8, col = "black")
 }
 
-## Purchasing Channels
+## Sales by Product Category
 par(mfrow=c(1,2))
 pie(colMeans(clust1[,c(4:9)]), col = rainbow(length(4:9)), main="cluster 1")
 pie(colMeans(clust2[,c(4:9)]), col = rainbow(length(4:9)), main="cluster 2")
 
-## Sales by Product Category
+## Purchasing Channels
 pie(colMeans(clust1[,c(11:13)]),col=rainbow(3),main="cluster 1")
 pie(colMeans(clust2[,c(11:13)]),col=rainbow(3),main="cluster 2")
 
